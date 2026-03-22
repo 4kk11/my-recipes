@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const recipesDir = '/Users/akihito/Desktop/playground/cooklang-recipes/recipes';
+const recipesDir = path.join(__dirname, 'recipes');
 const dirs = fs.readdirSync(recipesDir).filter(d =>
   fs.statSync(path.join(recipesDir, d)).isDirectory()
 );
@@ -29,7 +29,7 @@ const manifest = {
 };
 
 fs.writeFileSync(
-  '/Users/akihito/Desktop/playground/cooklang-recipes/manifest.json',
+  path.join(__dirname, 'manifest.json'),
   JSON.stringify(manifest, null, 2)
 );
 
