@@ -15,6 +15,11 @@ const recipes = dirs.map(dir => {
 
   if (!cookFile) return null;
 
+  // フロントマターに publish: true がないものはスキップ
+  const cookContent = fs.readFileSync(path.join(dirPath, cookFile), 'utf-8');
+  const frontmatterMatch = cookContent.match(/^---\n([\s\S]*?)\n---/);
+  if (!frontmatterMatch || !/^publish:\s*true$/m.test(frontmatterMatch[1])) return null;
+
   return {
     id: dir,
     cookFile: `recipes/${dir}/${cookFile}`,
