@@ -1,4 +1,5 @@
 ---
+recipe: true
 publish: true
 title: ほうれん草のクリームグラタンwithすだち
 description: クリーミーなホワイトソースとほうれん草、ベーコンが絶妙なバランスのグラタン。すだちの爽やかさが特徴的な一品です。
