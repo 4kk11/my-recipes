@@ -10,7 +10,7 @@ const recipes = dirs.map(dir => {
   const dirPath = path.join(recipesDir, dir);
   const files = fs.readdirSync(dirPath);
 
-  const cookFile = files.find(f => f.endsWith('.cook'));
+  const cookFile = files.find(f => f.endsWith('.md'));
   const imageFile = files.find(f => /\.(webp|jpg|jpeg|png)$/i.test(f));
 
   if (!cookFile) return null;
